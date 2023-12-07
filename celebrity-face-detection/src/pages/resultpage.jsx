@@ -3,7 +3,7 @@ import Compare from "../components/compare/compare";
 import Celebrity from "../components/Celebrity/Celebrity";
 
 
-const Resultpage = ({person}) => {
+const Resultpage = ({person,userUrl}) => {
 
   useEffect(() => {
     // axios call 
@@ -18,8 +18,8 @@ const Resultpage = ({person}) => {
       name: {person.name}
       value: {person.value}
       </div> */}
-    <Compare person={person}/>
-    <Celebrity gotName={person.name}/>
+    <Compare person={person} />
+    <Celebrity gotName={person.name} userUrl={userUrl}/>
     </>
   );
 };

@@ -7,13 +7,14 @@ import Resultpage from "./pages/resultpage";
 function App() {
 
   const [person, setPerson] = useState({})
+  const [userUrl, setUserUrl] = useState({})
   
   return (
     <>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Homepage setPerson={setPerson}/>}/>
-      <Route path='/result' element={<Resultpage person={person}/>}/>
+      <Route path='/' element={<Homepage setPerson={setPerson} setUserUrl={setUserUrl}/>}/>
+      <Route path='/result' element={<Resultpage person={person} userUrl={userUrl}/>}/>
     </Routes>
     </BrowserRouter>
     </>
