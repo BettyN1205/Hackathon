@@ -49,12 +49,14 @@ function InputForm() {
   }, [reuqestData]);
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <label htmlFor="">Url Link</label>
       <input type="text" name="urlLink" />
       <button type="submit">Submit</button>
       <Resultpage />
     </form>
+    </>
   );
 }
 
