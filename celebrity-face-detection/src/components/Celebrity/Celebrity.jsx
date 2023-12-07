@@ -44,7 +44,7 @@ const Celebrity = ({gotName, userUrl}) => {
       <>
       {
         hasPic?(
-        <div>
+        <div className='result-container'>
         <div className='cele-img'>
           <img src={userUrl} alt="" />
         <img

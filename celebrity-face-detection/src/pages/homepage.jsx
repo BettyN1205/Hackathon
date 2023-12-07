@@ -6,6 +6,7 @@ const Homepage=({setPerson, setUserUrl})=>{
         <>
          <Head/>
     <InputForm setPerson={setPerson} setUserUrl={setUserUrl}/>
+    
         </>
     )
 }

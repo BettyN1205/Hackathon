@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import "./inputForm.scss"
+
 function InputForm({setPerson,setUserUrl}) {
   const navigate = useNavigate()
   const APIKEY = "Key b907cdfa6acc4fffb62a87a0cd0f9267";
@@ -58,14 +60,18 @@ function InputForm({setPerson,setUserUrl}) {
   return (
     <>
       <form onSubmit={handleSubmit}>
+       
+        <div className="inputContainer">
         <label>Url Link</label>
         <input
           type="text"
           name="urlLink"
           placeholder="Please enter you image url link"
         />
-        <button type="submit">Submit</button>
-        {/* <Resultpage /> */}
+         <button type="submit">Submit</button>
+        </div>
+       
+
       </form>
     </>
   );
