@@ -51,8 +51,8 @@ function InputForm() {
   return (
     <>
     <form onSubmit={handleSubmit}>
-      <label htmlFor="">Url Link</label>
-      <input type="text" name="urlLink" />
+      <label>Url Link</label>
+      <input type="text" name="urlLink" placeholder="Please enter you image url link"/>
       <button type="submit">Submit</button>
       <Resultpage />
     </form>
