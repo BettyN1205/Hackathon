@@ -1,12 +1,11 @@
 
 import Head from "../components/header/header"
-import FileUpload from "../components/upload/upload";
-
+import InputForm from "../components/InputForm/InputForm";
 const Homepage=()=>{
     return (
         <>
          <Head/>
-    <FileUpload/>
+    <InputForm/>
         </>
     )
 }
