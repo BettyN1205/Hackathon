@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-const Celebrity = ({gotName}) => {
+import './Celebrity.scss'
+const Celebrity = ({gotName, userUrl}) => {
   const hasPic = true;
   // const gotName = 'Angelina Jolie';
   const [celebrity,setCelebrity]=useState('');
@@ -45,6 +46,7 @@ const Celebrity = ({gotName}) => {
         hasPic?(
         <div>
         <div className='cele-img'>
+          <img src={userUrl} alt="" />
         <img
           src={`https://www.themoviedb.org/t/p/original${celebrity.profile_path}`}
           alt={gotName}

@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function InputForm({setPerson}) {
+function InputForm({setPerson,setUserUrl}) {
   const navigate = useNavigate()
   const APIKEY = "Key b907cdfa6acc4fffb62a87a0cd0f9267";
 
   let handleSubmit = async (e) => {
     e.preventDefault();
     const urlLink = e.target.urlLink.value;
+    setUserUrl(urlLink)
     let data = JSON.stringify({
       inputs: [
         {
