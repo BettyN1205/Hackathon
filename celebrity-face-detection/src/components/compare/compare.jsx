@@ -1,15 +1,10 @@
-const Compare=()=>{
+const Compare=({person})=>{
+  let {name, value} = person
     return (
         <>
         <div>
-        <h2>You looks like: xxxx</h2>
-        <h2>The similarity is xxx%</h2>
-      </div>
-
-      <div>
-        <div className="user-img">
-          <img src="" alt="" />
-        </div>
+        <h2>You looks like: {name}</h2>
+        <h2>The similarity is {(Math.round(value * 100) / 100) * 100}% </h2>
       </div>
         </>
     )

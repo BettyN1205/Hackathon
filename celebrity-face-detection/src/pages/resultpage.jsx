@@ -1,11 +1,25 @@
+import { useEffect } from "react";
 import Compare from "../components/compare/compare";
 import Celebrity from "../components/Celebrity/Celebrity";
 
-const Resultpage = () => {
+
+const Resultpage = ({person}) => {
+
+  useEffect(() => {
+    // axios call 
+    console.log(person)
+
+  }, [])
+
+
   return (
     <>
-    <Compare/>
-    <Celebrity/>
+    {/* <div>
+      name: {person.name}
+      value: {person.value}
+      </div> */}
+    <Compare person={person}/>
+    <Celebrity gotName={person.name}/>
     </>
   );
 };

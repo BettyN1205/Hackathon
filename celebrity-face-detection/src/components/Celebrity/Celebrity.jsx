@@ -1,13 +1,10 @@
-
-import axios from 'axios';  
-import { useState, useEffect } from "react";
-
-const Celebrity = () => {
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+const Celebrity = ({gotName}) => {
   const hasPic = true;
-  const gotName = "Matt Damon";
-  const [celebrity,setCelebrity]=useState("");
+  // const gotName = 'Angelina Jolie';
+  const [celebrity,setCelebrity]=useState('');
   const [celeId,setCeleId]=useState(0);
-
   async function searchPerson(name) {
     try {
       const response = await axios.get(
@@ -31,29 +28,23 @@ const Celebrity = () => {
       let fondId=celebrityData.id;
      setCelebrity(celebrityData);
      setCeleId(fondId);
-
     } catch (error) {
       console.error('error:', error);
     }
   };
-
   useEffect(() => {
     searchPerson(gotName);
   }, []);
-  
   useEffect(() => {
     console.log(celebrity);
     console.log(celeId);
-  }, [celebrity]); 
-  
-
+  }, [celebrity]);
     return (
       <>
       {
         hasPic?(
-
         <div>
-        <div className="cele-img">
+        <div className='cele-img'>
         <img
           src={`https://www.themoviedb.org/t/p/original${celebrity.profile_path}`}
           alt={gotName}
@@ -61,38 +52,19 @@ const Celebrity = () => {
       </div>
         <h3>about {celebrity.name}</h3>
         <ul>
-        <li>gender: {celebrity.gender === 2 ? "Male" : celebrity.gender === 1 ? "Female" : "Unknown"}</li>
+        <li>gender: {celebrity.gender === 2 ? 'Male' : celebrity.gender === 1 ? 'Female' : 'Unknown'}</li>
           <li>known as:{celebrity.known_for_department}</li>
           <li>popularity:{celebrity.popularity}</li>
         </ul>
-        <h3>{celebrity.name}'s works:</h3>
-        <div>
-          <div>
-            <img src="" alt="" />
-            <p>title</p>
-          </div>
-          <div>
-            <img src="" alt="" />
-            <p>title</p>
-          </div>
-          <div>
-            <img src="" alt="" />
-            <p>title</p>
-          </div>
-        </div>
+        {/* <h3>{celebrity.name}'s works:</h3> */}
       </div>
-
         ):(
           <div>
         <h2>You're very unique, you don't look like any celebrity, and being yourself is the best thing to do</h2>
       </div>
-
         )
       }
       </>
-      
-
     )
 }
-
 export default Celebrity;

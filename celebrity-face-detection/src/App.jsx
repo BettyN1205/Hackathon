@@ -5,13 +5,15 @@ import Resultpage from "./pages/resultpage";
 
 
 function App() {
+
+  const [person, setPerson] = useState({})
   
   return (
     <>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Homepage/>}/>
-      <Route path='/result' element={<Resultpage/>}/>
+      <Route path='/' element={<Homepage setPerson={setPerson}/>}/>
+      <Route path='/result' element={<Resultpage person={person}/>}/>
     </Routes>
     </BrowserRouter>
     </>

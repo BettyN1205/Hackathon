@@ -1,11 +1,11 @@
 
 import Head from "../components/header/header"
-
-
-const Homepage=()=>{
+import InputForm from "../components/InputForm/InputForm";
+const Homepage=({setPerson})=>{
     return (
         <>
          <Head/>
+    <InputForm setPerson={setPerson}/>
         </>
     )
 }
